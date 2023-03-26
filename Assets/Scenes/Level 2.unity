@@ -4038,6 +4038,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   jumpSoundEffect: {fileID: 0}
+  keyFollowPoint: {fileID: 0}
+  followingKey: {fileID: 0}
 --- !u!251 &1048482400
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4104,7 +4106,7 @@ GameObject:
   - component: {fileID: 1116663214}
   m_Layer: 0
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14649,6 +14651,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpSoundEffect: {fileID: 0}
+  keyFollowPoint: {fileID: 0}
+  followingKey: {fileID: 0}
 --- !u!4 &1236066084
 Transform:
   m_ObjectHideFlags: 0
