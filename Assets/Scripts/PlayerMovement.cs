@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll; 
     private SpriteRenderer sprite;
     private Animator anim;
+    public PlayerHealth health;
     private float dirX = 0f;
     bool facingRight = true;
     [SerializeField] private float moveSpeed = 10f;
@@ -47,6 +48,10 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpSoundEffect.Play();
             rb.velocity = new Vector2(0, jumpSpeed);
+        }
+        if (Input.GetKeyDown(KeyCode.J)){
+            health.damage();
+
         }
 
         UpdateAnimationState();

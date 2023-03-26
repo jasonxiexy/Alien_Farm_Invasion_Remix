@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerHealth : MonoBehaviour
+{
+    public int maxHealth = 4;
+    public int currentHealth =  4;
+    public Health healthUI;
+    
+
+    void Start(){
+        healthUI.setMax(maxHealth);
+    }
+
+
+    public void damage(){
+        currentHealth -= 1;
+            healthUI.setHealth(currentHealth);
+            if(currentHealth == 0){
+                //
+            }
+    }
+
+
+}
