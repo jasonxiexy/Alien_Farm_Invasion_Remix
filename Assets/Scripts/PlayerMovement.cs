@@ -22,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private AudioSource jumpSoundEffect;
 
+    [SerializeField] public Transform keyFollowPoint;
+
+    public Key followingKey;
+
     // Start is called before the first frame update
     private void Start()
     {
