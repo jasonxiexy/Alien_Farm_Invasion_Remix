@@ -863,6 +863,11 @@ Transform:
   m_Father: {fileID: 32867148}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &997233555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8411038108881186360, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
+  m_PrefabInstance: {fileID: 4821733524880045309}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1046322506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14611,6 +14616,8 @@ GameObject:
   - component: {fileID: 1236066086}
   - component: {fileID: 1236066085}
   - component: {fileID: 1236066089}
+  - component: {fileID: 1236066091}
+  - component: {fileID: 1236066090}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -14763,6 +14770,34 @@ MonoBehaviour:
   avatar1: {fileID: 122193531}
   avatar2: {fileID: 0}
   avatar3: {fileID: 0}
+--- !u!114 &1236066090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236066081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25563ea5af67b456c938ae3f36ba3cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  rb: {fileID: 1236066088}
+--- !u!114 &1236066091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236066081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc0311eec17b4ea79ae47504fab91c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 997233555}
+  bulletPrefab: {fileID: 3188573890096127519, guid: c80167e5908ac4022ba661cd689c82b0, type: 3}
 --- !u!1 &1268346678
 GameObject:
   m_ObjectHideFlags: 0
