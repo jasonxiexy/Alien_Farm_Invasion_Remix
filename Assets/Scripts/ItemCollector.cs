@@ -29,7 +29,7 @@ public class ItemCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("key"))
         {
             collectSoundEffect.Play();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             key++;
             keyText.text = "Key: " + key;
         }
