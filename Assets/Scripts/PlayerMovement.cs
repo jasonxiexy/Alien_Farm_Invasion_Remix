@@ -1,3 +1,5 @@
+using System.Xml.Serialization;
+using System.Runtime.CompilerServices;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
     private float dirX = 0f;
+    bool facingRight = true;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpSpeed = 7f;
 
@@ -51,16 +54,35 @@ public class PlayerMovement : MonoBehaviour
     {
         movementState state;
 
-
+        
         if (dirX > 0f)
         {
+            
             state = movementState.walk;
-            sprite.flipX = false;
+            //sprite.flipX = false;
+            //sprite.transform.localScale = new Vector3(1, 1, 1);
+            if (!facingRight){
+                transform.Rotate(0f, 180f, 0f);
+                facingRight = true;
+            }
+            
+            
         }
         else if (dirX < 0f)
         {
             state = movementState.walk;
-            sprite.flipX = true;
+            //sprite.flipX = true;
+            //sprite.transform.localScale = new Vector3(-1, 1, 1);
+            //transform.Rotate(0f, -180f, 0f);
+
+           if (facingRight){
+               
+                transform.Rotate(0f, 180f, 0f);
+                facingRight = false;
+            }
+   
+            
+            
         }
         else
         {
