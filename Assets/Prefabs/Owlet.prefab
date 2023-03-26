@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff3b9d651320434ab19f86874bc879c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
   GemsText: {fileID: 0}
   collectSoundEffect: {fileID: 4821733525002236533}
   keyText: {fileID: 0}
