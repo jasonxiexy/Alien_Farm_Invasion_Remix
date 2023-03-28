@@ -30,7 +30,7 @@ public class getKey : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         // Check if the player collides with a grid
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "player")
         {
             // Enable key spawning
             //Debug.Log(canSpawnKey);

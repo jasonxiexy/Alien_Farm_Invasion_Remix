@@ -320,7 +320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff3b9d651320434ab19f86874bc879c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 0
   GemsText: {fileID: 0}
   collectSoundEffect: {fileID: 0}
   keyText: {fileID: 0}
@@ -422,6 +421,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpSoundEffect: {fileID: 0}
+  keyFollowPoint: {fileID: 0}
+  followingKey: {fileID: 0}
 --- !u!4 &74293211
 Transform:
   m_ObjectHideFlags: 0
@@ -438,6 +439,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &104542726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 104542727}
+  m_Layer: 0
+  m_Name: keyFolowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &104542727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104542726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.13, y: 1.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 742706731}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &124943468
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,10 +481,10 @@ GameObject:
   - component: {fileID: 124943473}
   - component: {fileID: 124943472}
   - component: {fileID: 124943471}
-  - component: {fileID: 124943470}
   - component: {fileID: 124943469}
+  - component: {fileID: 124943474}
   m_Layer: 0
-  m_Name: DoorFinish
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -554,18 +586,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &124943470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124943468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e275bf92487849b0991cb3bef11b6df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &124943471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -659,6 +679,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &124943474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124943468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa211efe25d394016995aa00b46cc355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theSR: {fileID: 124943472}
+  doorOpenSprite: {fileID: 1458979521, guid: ed3b0a54ee3ca4f46ab01051ffb62c8c, type: 3}
+  doorOpen: 0
+  waitingToOpen: 0
 --- !u!1 &127333311
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +770,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   jumpSoundEffect: {fileID: 0}
+  keyFollowPoint: {fileID: 0}
+  followingKey: {fileID: 0}
 --- !u!66 &127333315
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -749,11 +787,169 @@ CompositeCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
-  m_GenerationType: 1
+  m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 127333317}
+    m_ColliderPaths:
+    - - X: 300000000
+        Y: 100000000
+      - X: 630000000
+        Y: 100000000
+      - X: 630000000
+        Y: -10000000
+      - X: 640000000
+        Y: -10000000
+      - X: 640000000
+        Y: -20000000
+      - X: 650000000
+        Y: -20000000
+      - X: 650000000
+        Y: 120000000
+      - X: -150000000
+        Y: 120000000
+      - X: -150000000
+        Y: 100000000
+      - X: 280000000
+        Y: 100000000
+      - X: 280000000
+        Y: -20000000
+      - X: 180000000
+        Y: -20000000
+      - X: 180000000
+        Y: 40000000
+      - X: 160000000
+        Y: 40000000
+      - X: 160000000
+        Y: -40000000
+      - X: 300000000
+        Y: -40000000
+    - - X: 1300000000
+        Y: 70000000
+      - X: 1100000000
+        Y: 70000000
+      - X: 1100000000
+        Y: 50000000
+      - X: 1300000000
+        Y: 50000000
+    - - X: 1050000000
+        Y: 70000000
+      - X: 850000000
+        Y: 70000000
+      - X: 850000000
+        Y: 50000000
+      - X: 1050000000
+        Y: 50000000
+    - - X: -60000000
+        Y: 10000000
+      - X: 60000000
+        Y: 10000000
+      - X: 60000000
+        Y: -80000000
+      - X: 650000000
+        Y: -80000000
+      - X: 650000000
+        Y: -70000000
+      - X: 360000000
+        Y: -70000000
+      - X: 360000000
+        Y: 30000000
+      - X: 460000000
+        Y: 30000000
+      - X: 460000000
+        Y: -30000000
+      - X: 480000000
+        Y: -30000000
+      - X: 480000000
+        Y: 50000000
+      - X: 340000000
+        Y: 50000000
+      - X: 340000000
+        Y: -70000000
+      - X: 90000000
+        Y: -70000000
+      - X: 90000000
+        Y: 40000000
+      - X: -150000000
+        Y: 40000000
+      - X: -150000000
+        Y: 10000000
+      - X: -90000000
+        Y: 10000000
+      - X: -90000000
+        Y: -80000000
+      - X: -60000000
+        Y: -80000000
+    - - X: 1300000000
+        Y: -10000000
+      - X: 1100000000
+        Y: -10000000
+      - X: 1100000000
+        Y: -30000000
+      - X: 1300000000
+        Y: -30000000
+    - - X: 1050000000
+        Y: -10000000
+      - X: 850000000
+        Y: -10000000
+      - X: 850000000
+        Y: -30000000
+      - X: 1050000000
+        Y: -30000000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 29.999971, y: -4}
+      - {x: 30.000029, y: 10}
+      - {x: 63, y: 9.99997}
+      - {x: 63.000034, y: -1}
+      - {x: 64, y: -1.0000294}
+      - {x: 64.00003, y: -2}
+      - {x: 65, y: -1.9999708}
+      - {x: 64.99997, y: 12}
+      - {x: -15, y: 11.99997}
+      - {x: -14.999971, y: 10}
+      - {x: 28, y: 9.99997}
+      - {x: 27.999971, y: -2}
+      - {x: 18, y: -1.9999707}
+      - {x: 17.999971, y: 4}
+      - {x: 16, y: 3.999971}
+      - {x: 16.000029, y: -4}
+    - - {x: 104.99997, y: 5}
+      - {x: 104.99997, y: 7}
+      - {x: 85, y: 6.9999704}
+      - {x: 85.00003, y: 5}
+    - - {x: 129.99997, y: 5}
+      - {x: 129.99997, y: 7}
+      - {x: 110, y: 6.9999704}
+      - {x: 110.00003, y: 5}
+    - - {x: -6.000029, y: -8}
+      - {x: -5.9999704, y: 1}
+      - {x: 6, y: 0.9999706}
+      - {x: 6.000029, y: -8}
+      - {x: 65, y: -7.9999704}
+      - {x: 64.99997, y: -7}
+      - {x: 36, y: -6.9999704}
+      - {x: 36.00003, y: 3}
+      - {x: 46, y: 2.9999707}
+      - {x: 46.00003, y: -3}
+      - {x: 48, y: -2.999971}
+      - {x: 47.999973, y: 5}
+      - {x: 34, y: 4.999971}
+      - {x: 33.999973, y: -7}
+      - {x: 9, y: -6.9999704}
+      - {x: 8.99997, y: 4}
+      - {x: -15, y: 3.999971}
+      - {x: -14.999971, y: 1}
+      - {x: -9, y: 0.9999706}
+      - {x: -8.99997, y: -8}
+    - - {x: 129.99997, y: -3}
+      - {x: 129.99997, y: -1}
+      - {x: 110, y: -1.0000293}
+      - {x: 110.00003, y: -3}
+    - - {x: 104.99997, y: -3}
+      - {x: 104.99997, y: -1}
+      - {x: 85, y: -1.0000293}
+      - {x: 85.00003, y: -3}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &127333316
@@ -789,7 +985,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
@@ -8585,25 +8781,29 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 1.0398794
       objectReference: {fileID: 0}
+    - target: {fileID: 4821733525002236541, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
+      propertyPath: keyFollowPoint
+      value: 
+      objectReference: {fileID: 104542727}
     - target: {fileID: 4821733525002236543, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: keyText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 267425030}
     - target: {fileID: 4821733525002236543, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: GemsText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 362999263}
     - target: {fileID: 4821733525002236546, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4821733525002236546, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.26
+      value: 18.2
       objectReference: {fileID: 0}
     - target: {fileID: 4821733525002236546, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.53
+      value: -3.76
       objectReference: {fileID: 0}
     - target: {fileID: 4821733525002236546, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8643,7 +8843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4821733525002236550, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
@@ -26942,7 +27142,7 @@ PrefabInstance:
     - target: {fileID: 2700816342120367723, guid: abfe9da31f9024a419e73c99d8535d92, type: 3}
       propertyPath: keyPrefab
       value: 
-      objectReference: {fileID: 5654732535167847490, guid: 8b2b061a458414abea556e287e47b7b0, type: 3}
+      objectReference: {fileID: 1012281978215885365, guid: 58e93aef938c4421088c86eb1dd1d0c1, type: 3}
     - target: {fileID: 4642288355416887076, guid: abfe9da31f9024a419e73c99d8535d92, type: 3}
       propertyPath: m_Name
       value: Hit (16x32)_0
