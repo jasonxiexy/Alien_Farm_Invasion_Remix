@@ -8,7 +8,7 @@ public class ItemCollector : MonoBehaviour
 {
 
     private int gems = 0;
-    public int key = 0;
+    private int key = 0;
 
     [SerializeField] private Text GemsText;
     [SerializeField] private AudioSource collectSoundEffect;
@@ -26,7 +26,7 @@ public class ItemCollector : MonoBehaviour
             GemsText.text = "Gems: " + gems;
         }
 
-        if (collision.gameObject.CompareTag("key"))
+        if (collision.gameObject.CompareTag("key") && key == 0)
         {
             collectSoundEffect.Play();
             //Destroy(collision.gameObject);
