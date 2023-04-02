@@ -45,11 +45,7 @@ public class PlayerMovement : MonoBehaviour
             jumpSoundEffect.Play();
             rb.velocity = new Vector2(0, jumpSpeed);
         }
-        if (Input.GetKeyDown(KeyCode.J)){
-            health.damage();
-
-        }
-
+        
         UpdateAnimationState();
 
 
