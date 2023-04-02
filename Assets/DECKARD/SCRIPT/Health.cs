@@ -5,10 +5,17 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    private RectTransform rectTransform;
    public Slider slider;
    public Gradient gradient;
    public Image fill;//set the fill image to this collor
     // Start is called before the first frame update
+    private void Start()
+    {
+        // Get a reference to the RectTransform component
+        rectTransform = GetComponent<RectTransform>();
+        rectTransform.rotation = Quaternion.identity;
+    }
     public void setHealth(int health){
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);

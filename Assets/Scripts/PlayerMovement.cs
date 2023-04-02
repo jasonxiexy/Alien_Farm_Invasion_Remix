@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public bool inputEnabled = true;
     private BoxCollider2D coll; 
     private SpriteRenderer sprite;
     private Animator anim;
@@ -40,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (!inputEnabled) {
+        return; // exit early if input is disabled
+    }
 
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);

@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-    public GameObject bomb1;
-    public GameObject bomb2;
-    public GameObject bomb3;
-    public GameObject player;
     private Rigidbody2D rb;
     private Animator anim;
+    public PlayerHealth health;
+    public PlayerMovement move;
 
     [SerializeField] AudioSource deathSoundEffect;
 
@@ -25,25 +23,41 @@ public class PlayerLife : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("trap")){
-            Debug.Log("lala");
-            if (collision.gameObject.name == bomb1.name || collision.gameObject.name == bomb2.name || collision.gameObject.name == bomb3.name)
-            {
-                Debug.Log("gg");
-                anim.SetTrigger("Death");
-                transform.parent.GetComponent<HeroSpawner>().SpawnHero();
-            }
+            
+            rb.bodyType = RigidbodyType2D.Static;
             Die();
+            
+            StartCoroutine(WaitAndRespawn(collision));
+            
+            // Vector3   rebornP = collision.transform.parent.GetChild(0).transform.position;
+            // Debug.Log("Parent function called");
+            // transform.position = rebornP;
+            // health.damage();
         }
-        //else if (rb.velocity.y < -5)
-        //{
-        //    Die();
-        //}
     }
+
+    private IEnumerator WaitAndRespawn(Collision2D collision)
+{
+    // Wait for 1 second
+    yield return new WaitForSeconds(1f);
+    
+
+    // Get the respawn point from the parent object
+    Vector3 respawnPoint = collision.transform.GetChild(0).transform.position;
+    Debug.Log("Parent function called");
+    transform.position = respawnPoint;
+    rb.bodyType = RigidbodyType2D.Dynamic;
+
+    // Damage the player's health
+    health.damage();
+
+    if (health.currentHealth == 0) RestartLevel();
+}
 
     private void Die()
     {
         deathSoundEffect.Play();
-        rb.bodyType = RigidbodyType2D.Static;
+        //rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
     }
 
@@ -51,5 +65,4 @@ public class PlayerLife : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
 }
