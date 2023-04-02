@@ -13,7 +13,10 @@ public class PlayerLife : MonoBehaviour
     private Animator anim;
 
     [SerializeField] AudioSource deathSoundEffect;
-
+    [SerializeField] GameObject replayButton;
+    [SerializeField] GameObject pauseButton;
+    [SerializeField] GameObject resumeButton;
+    [SerializeField] GameObject homeButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,11 +48,36 @@ public class PlayerLife : MonoBehaviour
         deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
+        replayButton.SetActive(true);
+        homeButton.SetActive(true);
     }
 
-    private void RestartLevel()
+    //private void RestartLevel()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //}
+    public void replay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void pause()
+    {
+        Time.timeScale = 0f;
+        resumeButton.SetActive(true);
+        homeButton.SetActive(true);
+    }
+
+    public void resume()
+    {
+        Time.timeScale = 1f;
+        resumeButton.SetActive(false);
+        homeButton.SetActive(false);
+    }
+
+    public void home()
+    {
+        SceneManager.LoadScene("Start");
+        Time.timeScale = 1f;
+    }
 }
