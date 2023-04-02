@@ -7264,6 +7264,18 @@ PrefabInstance:
       propertyPath: GemsText
       value: 
       objectReference: {fileID: 1814975698}
+    - target: {fileID: 5601689132762804740, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
+      propertyPath: bomb1
+      value: 
+      objectReference: {fileID: 7042255642297810200, guid: 23b448677dd1d403d8c5d766cdbb2424, type: 3}
+    - target: {fileID: 5601689132762804740, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
+      propertyPath: bomb2
+      value: 
+      objectReference: {fileID: 8284674974945486332, guid: 2b42e7de738f642aa8cc25806f9bd49d, type: 3}
+    - target: {fileID: 5601689132762804740, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
+      propertyPath: bomb3
+      value: 
+      objectReference: {fileID: 7042255642297810200, guid: 23b448677dd1d403d8c5d766cdbb2424, type: 3}
     - target: {fileID: 5601689132762804986, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
       propertyPath: m_TagString
       value: player
