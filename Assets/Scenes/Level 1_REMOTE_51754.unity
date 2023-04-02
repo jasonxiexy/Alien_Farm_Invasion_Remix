@@ -4192,14 +4192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa211efe25d394016995aa00b46cc355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayer: {fileID: 0}
   theSR: {fileID: 1101945415}
   doorOpenSprite: {fileID: 1458979521, guid: ed3b0a54ee3ca4f46ab01051ffb62c8c, type: 3}
   doorOpen: 0
   waitingToOpen: 0
-  finishSound: {fileID: 0}
-  anim: {fileID: 0}
-  levelCompleted: 0
 --- !u!1 &1201761475
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,7 +5974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff3b9d651320434ab19f86874bc879c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 0
   GemsText: {fileID: 0}
   collectSoundEffect: {fileID: 0}
   keyText: {fileID: 0}
