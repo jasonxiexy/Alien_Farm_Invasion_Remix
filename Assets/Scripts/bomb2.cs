@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 
 public class bomb2 : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class bomb2 : MonoBehaviour
     private float speed = 20f;
     private float yLimit = 10f;
     private bool seond = false;
+    public static GameObject bomb;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +42,15 @@ public class bomb2 : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    public static void restart()
+    {
+        bomb = Resources.Load<GameObject>("Prefabs/bomb2");
+        Vector3 targetPosition;
+        targetPosition.x = 142.26f;
+        targetPosition.y = -7.14f;
+        targetPosition.z = 0.1596006f;
+        Instantiate(bomb, targetPosition, Quaternion.identity);
+        active = false;
     }
 }

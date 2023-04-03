@@ -8,14 +8,15 @@ public class getKey : MonoBehaviour
     public GameObject skill;
     private int canSpawnKey = 0;
     private bool getbook= true;
-
+    private GameObject book;
+    public static GameObject thebook;
     void Update()
     {
         if (canSpawnKey <= 2)
          {
                 if(canSpawnKey == 1 && getbook){
                     Vector3 skill_position = transform.position + transform.right * 5f + Vector3.down * 1.5f;
-                    Instantiate(skill, skill_position, Quaternion.identity);
+                    thebook =Instantiate(skill, skill_position, Quaternion.identity);
                     getbook = false;
                 }
                 else if(canSpawnKey == 2){
@@ -40,5 +41,9 @@ public class getKey : MonoBehaviour
             //Debug.Log(canSpawnKey);
             canSpawnKey++;
         }
+    }
+    private GameObject getBook()
+    {
+        return book;
     }
 }

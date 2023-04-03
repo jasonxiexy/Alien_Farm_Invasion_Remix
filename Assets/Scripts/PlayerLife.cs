@@ -7,14 +7,16 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     public GameObject bomb1;
-    public GameObject bomb2;
+    public GameObject bomb_2;
     public GameObject bomb3;
     public GameObject player;
     private Rigidbody2D rb;
     private Animator anim;
      public PlayerHealth health;
      public Vector3 respawnPoint;
-
+    private bool wp = false;
+    public GameObject magicbook;
+    private getKey gg;
     [SerializeField] AudioSource deathSoundEffect;
     [SerializeField] GameObject replayButton;
     [SerializeField] GameObject pauseButton;
@@ -26,6 +28,7 @@ public class PlayerLife : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //respawnPoint = GetComponent<Vector3>();
+        gg = FindObjectOfType<getKey>();
     }
 
 
@@ -36,13 +39,20 @@ public class PlayerLife : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
             Die();
             StartCoroutine(WaitAndRespawn(collision));
-            if (collision.gameObject.name == bomb1.name || collision.gameObject.name == bomb2.name || collision.gameObject.name == bomb3.name)
+            if (collision.gameObject.name == bomb1.name || collision.gameObject.name == bomb_2.name || collision.gameObject.name == bomb3.name)
             {
                 Debug.Log("gg");
                 Die();
                 this.respawnPoint = new Vector3(127.11f, 1f, 0);
-                StartCoroutine(WaitAndRespawn(collision));
+                transform.position = respawnPoint;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //StartCoroutine(WaitAndRespawn(collision));
             }
+        }
+        if (collision.gameObject.CompareTag("magicbook"))
+        {
+            this.setWp();
+            Destroy(getKey.thebook);
         }
         //else if (rb.velocity.y < -5)
         //{
@@ -65,8 +75,11 @@ public class PlayerLife : MonoBehaviour
     //Vector3 respawnPoint = collision.transform.GetChild(0).transform.position;
     Debug.Log("Parent function called");
     transform.position = respawnPoint;
-    rb.bodyType = RigidbodyType2D.Dynamic;
-    }
+            //rb.bodyType = RigidbodyType2D.Dynamic;
+            //bomb_trap.restart();
+            //bomb2.restart();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
     // Damage the player's health
     
@@ -86,7 +99,7 @@ public class PlayerLife : MonoBehaviour
     //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     //}
     public void replay()
-    {
+    { 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -114,4 +127,12 @@ public class PlayerLife : MonoBehaviour
     // {
     //     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     // }
+    public void setWp()
+    {
+        this.wp = true;
+    }
+    public bool getWp()
+    {
+        return wp;
+    }
 }
