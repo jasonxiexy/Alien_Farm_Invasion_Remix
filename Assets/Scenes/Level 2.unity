@@ -15087,6 +15087,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 1236066088}
+  damage: 40
+  impactEffect: {fileID: 0}
 --- !u!114 &1236066091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16473,6 +16475,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1236066084}
     m_Modifications:
+    - target: {fileID: 4821733525002236536, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
+      propertyPath: bomb1
+      value: 
+      objectReference: {fileID: 7042255642297810200, guid: 23b448677dd1d403d8c5d766cdbb2424, type: 3}
+    - target: {fileID: 4821733525002236536, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
+      propertyPath: bomb2
+      value: 
+      objectReference: {fileID: 8284674974945486332, guid: 2b42e7de738f642aa8cc25806f9bd49d, type: 3}
+    - target: {fileID: 4821733525002236536, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
+      propertyPath: bomb3
+      value: 
+      objectReference: {fileID: 7042255642297810200, guid: 23b448677dd1d403d8c5d766cdbb2424, type: 3}
+    - target: {fileID: 4821733525002236536, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 4821733525002236550, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
     - target: {fileID: 4821733525002236541, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: keyFollowPoint
       value: 
