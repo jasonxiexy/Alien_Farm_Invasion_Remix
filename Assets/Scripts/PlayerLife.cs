@@ -50,6 +50,7 @@ public class PlayerLife : MonoBehaviour
                 //StartCoroutine(WaitAndRespawn(collision));
             }
         }
+        
         if (collision.gameObject.CompareTag("magicbook"))
         {
             this.setWp();
@@ -87,7 +88,7 @@ public class PlayerLife : MonoBehaviour
             //rb.bodyType = RigidbodyType2D.Dynamic;
             //bomb_trap.restart();
             //bomb2.restart();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);//restart
         }
 
     // Damage the player's health
