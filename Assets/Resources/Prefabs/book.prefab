@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6166083189089004325}
   - component: {fileID: 6166083189089004326}
-  - component: {fileID: 1596855852268018023}
+  - component: {fileID: 2158715805760781473}
   m_Layer: 0
   m_Name: book
   m_TagString: magicbook
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1596855852268018023
+--- !u!61 &2158715805760781473
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

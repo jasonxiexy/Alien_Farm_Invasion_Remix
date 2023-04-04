@@ -1,5 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+// using System.Diagnostics;
+// using System.Collections;
+// using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyOnDistance : MonoBehaviour
@@ -10,11 +11,17 @@ public class DestroyOnDistance : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(transform.position);
+        Debug.Log(target.position);
         if (Vector3.Distance(transform.position, target.position) > distanceThreshold)
         {
             
             Destroy(gameObject);
         }
+        // if (Mathf.Abs(transform.position.x - target.position.x) > distanceThreshold)
+        //         {
+        //             Destroy(gameObject);
+        //         }
     }
 }
 

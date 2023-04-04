@@ -14,9 +14,10 @@ public class PlayerLife : MonoBehaviour
     private Animator anim;
      public PlayerHealth health;
      public Vector3 respawnPoint;
-    private bool wp = false;
+     private bool wp = false;
     public GameObject magicbook;
     private getKey gg;
+
     [SerializeField] AudioSource deathSoundEffect;
     [SerializeField] GameObject replayButton;
     [SerializeField] GameObject pauseButton;
@@ -58,7 +59,15 @@ public class PlayerLife : MonoBehaviour
         //{
         //    Die();
         //}
+        if (collision.gameObject.CompareTag("magicbook"))
+        {
+            this.setWp();
+            Destroy(getKey.thebook);
+        }
     }
+
+
+    
      private IEnumerator WaitAndRespawn(Collision2D collision)
 {
     // Wait for 1 second
@@ -136,3 +145,4 @@ public class PlayerLife : MonoBehaviour
         return wp;
     }
 }
+
