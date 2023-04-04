@@ -741,6 +741,8 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 0}
   keyFollowPoint: {fileID: 0}
   followingKey: {fileID: 0}
+  speedBoost: {fileID: 0}
+  jumpBoost: {fileID: 0}
 --- !u!66 &127333315
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -32697,11 +32699,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 573758208800587296, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -53.38
+      value: -164.1
       objectReference: {fileID: 0}
     - target: {fileID: 573758208800587296, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.63
+      value: 10.6
       objectReference: {fileID: 0}
     - target: {fileID: 573758208800587482, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
       propertyPath: bomb_2
