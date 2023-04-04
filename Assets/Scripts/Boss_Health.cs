@@ -10,12 +10,20 @@ public class Boss_Health : MonoBehaviour
 
 	public bool isInvulnerable = false;
 
-	public void TakeDamage(int damage)
+	public Health healthUI;
+
+    private void Start()
+    {
+		healthUI.setMax(health);
+    }
+
+    public void TakeDamage(int damage)
 	{
 		if (isInvulnerable)
 			return;
 
 		health -= damage;
+		healthUI.setHealth(health);
 
 		//if (health <= 200)
 		//{
