@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private BoxCollider2D coll; 
+    private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
     private float dirX = 0f;
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
                 // boosting = false;
                 // speedBoost.SetActive(true);
             }
-            if (boostAppearTimer >= 10)
+            if (boostAppearTimer >= 15)
             {
                 // Debug.Log("10");
                 boostAppearTimer = 0;
@@ -125,19 +125,20 @@ public class PlayerMovement : MonoBehaviour
     {
         movementState state;
 
-        
+
         if (dirX > 0f)
         {
-            
+
             state = movementState.walk;
             //sprite.flipX = false;
             //sprite.transform.localScale = new Vector3(1, 1, 1);
-            if (!facingRight){
+            if (!facingRight)
+            {
                 transform.Rotate(0f, 180f, 0f);
                 facingRight = true;
             }
-            
-            
+
+
         }
         else if (dirX < 0f)
         {
@@ -146,14 +147,15 @@ public class PlayerMovement : MonoBehaviour
             //sprite.transform.localScale = new Vector3(-1, 1, 1);
             //transform.Rotate(0f, -180f, 0f);
 
-           if (facingRight){
-               
+            if (facingRight)
+            {
+
                 transform.Rotate(0f, 180f, 0f);
                 facingRight = false;
             }
-   
-            
-            
+
+
+
         }
         else
         {
@@ -207,4 +209,4 @@ public class PlayerMovement : MonoBehaviour
             jumpSoundEffect.Play();
         }
     }
-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+}
