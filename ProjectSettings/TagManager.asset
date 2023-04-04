@@ -10,6 +10,8 @@ TagManager:
   - player
   - magicbook
   - bullet1
+  - SpeedBoost
+  - JumpBoost
   layers:
   - Default
   - TransparentFX
