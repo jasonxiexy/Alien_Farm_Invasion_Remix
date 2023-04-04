@@ -13,6 +13,7 @@ public class moving_enemy : MonoBehaviour
     public GameObject player;
     private float dealth_force;
     private Rigidbody2D playerBody;
+    private Enemy_Health health;
 
     [SerializeField] private float speed = 2f;
 
@@ -28,6 +29,7 @@ public class moving_enemy : MonoBehaviour
         {
             //Destroy(collision.gameObject);
             //monster jump by force
+            
             float jumpHeight = 1.5f;
             float jumpDuration = 0.5f;
             float gravity = Physics2D.gravity.magnitude;
@@ -38,12 +40,26 @@ public class moving_enemy : MonoBehaviour
             float initialVelocity = (jumpHeight - 0.5f * gravity * jumpDuration * jumpDuration) / jumpDuration;
             float force = playerBody.mass * (initialVelocity - playerBody.velocity.y) / jumpDuration;        
             playerBody.AddForce(new Vector2(0, force), ForceMode2D.Impulse);
+            health.damage();
+            if(health.currentHealth == 0) gameObject.SetActive(false);
             
             
-            gameObject.SetActive(false);
         }
+        
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("bullet1")){
+
+            health.damage();
+            if(health.currentHealth == 0) gameObject.SetActive(false);
+        }
+
+    }
+
     private void Start(){
+        health = transform.GetComponent<Enemy_Health>();
         playerBody = player.GetComponent<Rigidbody2D>();
         dealth_force = Mathf.Sqrt(2f * Physics2D.gravity.magnitude * jumpHeight * playerBody.mass);
         
