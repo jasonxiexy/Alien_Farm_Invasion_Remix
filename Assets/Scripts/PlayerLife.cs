@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//[ExecuteInEditMode]
+[ExecuteInEditMode]
 public class PlayerLife : MonoBehaviour
 {
     public GameObject bomb1;
     public GameObject bomb_2;
     public GameObject bomb3;
+    public GameObject spike1;
+    public GameObject spike_2;
     public GameObject player;
     private Rigidbody2D rb;
     private Animator anim;
@@ -39,27 +41,21 @@ public class PlayerLife : MonoBehaviour
             //Debug.Log("lala");
             rb.bodyType = RigidbodyType2D.Static;
             Die();
-            StartCoroutine(WaitAndRespawn(collision));
-            if (collision.gameObject.name == bomb1.name || collision.gameObject.name == bomb_2.name || collision.gameObject.name == bomb3.name)
+          
+            if (transform.position.x >= 128)
+            //if (collision.gameObject.name == bomb1.name || collision.gameObject.name == bomb_2.name || collision.gameObject.name == spike1.name || collision.gameObject.name == spike_2.name)
             {
-                Debug.Log("gg");
-                Die();
-                this.respawnPoint = new Vector3(127.11f, 1f, 0);
-                transform.position = respawnPoint;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //Debug.Log("gg");
+                //Die();
+                //this.respawnPoint = new Vector3(127.11f, 1f, 0);
+                //transform.position = respawnPoint;
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 //StartCoroutine(WaitAndRespawn(collision));
+                //SceneManager.LoadScene(5);
             }
+            StartCoroutine(WaitAndRespawn(collision));
+     
         }
-        
-        if (collision.gameObject.CompareTag("magicbook"))
-        {
-            this.setWp();
-            Destroy(getKey.thebook);
-        }
-        //else if (rb.velocity.y < -5)
-        //{
-        //    Die();
-        //}
         if (collision.gameObject.CompareTag("magicbook"))
         {
             this.setWp();
@@ -83,12 +79,40 @@ public class PlayerLife : MonoBehaviour
     }else{
     // Get the respawn point from the parent object
     //Vector3 respawnPoint = collision.transform.GetChild(0).transform.position;
+
+
     Debug.Log("Parent function called");
-    transform.position = respawnPoint;
-            //rb.bodyType = RigidbodyType2D.Dynamic;
-            //bomb_trap.restart();
-            //bomb2.restart();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);//restart
+    //transform.position = respawnPoint;
+    bomb1.transform.position = new Vector3(137.26f, -9.14f, 0.1596006f);
+    bomb1.transform.rotation = Quaternion.identity;
+    bomb_trap.active = false;
+    bomb_2.transform.position = new Vector3(155.42f, -9.591613f, 0.1596006f);
+    bomb_2.transform.rotation = Quaternion.identity; 
+    bomb2.active = false;
+    spike1.transform.position = new Vector3(166.7182f, -7.311613f, 0.3192011f);
+    spike1.transform.rotation = Quaternion.identity;
+    spike_2.transform.position = new Vector3(168.8475f, -7.341613f, 0.3192011f);
+    spike_2.transform.rotation = Quaternion.identity;
+    spike2.active = false;
+
+            if (transform.position.x >= 128)
+            //if (collision.gameObject.name == bomb1.name || collision.gameObject.name == bomb_2.name || collision.gameObject.name == spike1.name || collision.gameObject.name == spike_2.name)
+            {
+                //Debug.Log("gg");
+                //Die();
+                //this.respawnPoint = new Vector3(127.11f, 1f, 0);
+                //transform.position = respawnPoint;
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //StartCoroutine(WaitAndRespawn(collision));
+                SceneManager.LoadScene(5);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            //        rb.bodyType = RigidbodyType2D.Dynamic;
+
+            
         }
 
     // Damage the player's health
