@@ -39,7 +39,8 @@ public class bomb2 : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             if (transform.position.y < -13f)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                active = false;
             }
         }
     }

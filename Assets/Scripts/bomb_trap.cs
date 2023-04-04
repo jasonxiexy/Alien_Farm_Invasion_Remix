@@ -7,8 +7,8 @@ public class bomb_trap : MonoBehaviour
     public static bool active = false;
     private float speed = 20f;
     private float yLimit = 13f;
-    public static GameObject bomb1;
-    // Start is called before the first frame update
+    //public static GameObject bomb1;
+    public GameObject bomb1;
 
     // Update is called once per frame
     void Start()
@@ -26,18 +26,20 @@ public class bomb_trap : MonoBehaviour
 
             if (transform.position.y > yLimit)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                active = false;
+
             }
         }
     }
-    public static void restart()
-    {
-        bomb1 = Resources.Load<GameObject>("Prefabs/bomb");
-        Vector3 targetPosition;
-        targetPosition.x = 142.26f;
-        targetPosition.y = -7.14f;
-        targetPosition.z = 0.1596006f;
-        Instantiate(bomb1, targetPosition, Quaternion.identity);
-        active = false;
-    }
+    //public static void restart()
+    //{
+    //    bomb1 = Resources.Load<GameObject>("Prefabs/bomb");
+    //    Vector3 targetPosition;
+    //    targetPosition.x = 142.26f;
+    //    targetPosition.y = -7.14f;
+    //    targetPosition.z = 0.1596006f;
+    //    Instantiate(bomb1, targetPosition, Quaternion.identity);
+    //    active = false;
+    //}
 }
