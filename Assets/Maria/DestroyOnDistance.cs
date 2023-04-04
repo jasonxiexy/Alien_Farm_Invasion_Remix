@@ -8,6 +8,8 @@ public class DestroyOnDistance : MonoBehaviour
     // Start is called before the first frame update
     public Transform target;
     public float distanceThreshold = 30f;
+    //public int damage = 40;
+
 
     void Update()
     {
@@ -15,7 +17,7 @@ public class DestroyOnDistance : MonoBehaviour
         Debug.Log(target.position);
         if (Vector3.Distance(transform.position, target.position) > distanceThreshold)
         {
-            
+
             Destroy(gameObject);
         }
         // if (Mathf.Abs(transform.position.x - target.position.x) > distanceThreshold)
@@ -29,6 +31,7 @@ public class DestroyOnDistance : MonoBehaviour
         Destroy(gameObject);
 
     }
+
 }
 
 
