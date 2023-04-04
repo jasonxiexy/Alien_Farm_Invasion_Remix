@@ -8,8 +8,8 @@ TagManager:
   - trap
   - key
   - player
-  - magicbook
-  - bullet1
+  - bullet
+  - boss
   layers:
   - Default
   - TransparentFX
