@@ -410,7 +410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74293201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 187.86, y: 2.49, z: 0}
+  m_LocalPosition: {x: 181, y: -3.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12591,6 +12591,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4821733525002236544, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4821733525002236545, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_Material
       value: 
@@ -12601,11 +12605,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4821733525002236546, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -166.2
+      value: -164
       objectReference: {fileID: 0}
     - target: {fileID: 4821733525002236546, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.3
+      value: 8.84
       objectReference: {fileID: 0}
     - target: {fileID: 4821733525002236546, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13300,6 +13304,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1662402912}
   - {fileID: 1217544445}
+  player: {fileID: 742706732}
   speed: 2
 --- !u!95 &1019097235
 Animator:
@@ -13582,6 +13587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 7640330016342487983, guid: 8ce32ab4b1fe640548241dd7d8e42432, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 742706732}
     - target: {fileID: 7640330016342487983, guid: 8ce32ab4b1fe640548241dd7d8e42432, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
@@ -14303,6 +14312,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 730434088}
   - {fileID: 255437179}
+  player: {fileID: 742706732}
   speed: 2
 --- !u!95 &1387447950
 Animator:
