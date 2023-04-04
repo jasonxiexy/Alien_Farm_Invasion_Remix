@@ -1,6 +1,7 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class Weapon : MonoBehaviour
 {
     private PlayerLife player;
@@ -16,7 +17,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
 
-        if(player.getWp())
+        if(player.getWp() || (SceneManager.GetActiveScene().buildIndex==4))
         {
             
             if (Input.GetButtonDown("Fire1"))

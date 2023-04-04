@@ -9,6 +9,7 @@ TagManager:
   - key
   - player
   - magicbook
+  - bullet1
   layers:
   - Default
   - TransparentFX

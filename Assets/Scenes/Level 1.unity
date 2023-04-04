@@ -8320,6 +8320,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7042255642297810200, guid: 23b448677dd1d403d8c5d766cdbb2424, type: 3}
     - target: {fileID: 5601689132762804740, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
+      propertyPath: bomb_2
+      value: 
+      objectReference: {fileID: 8284674974945486332, guid: 2b42e7de738f642aa8cc25806f9bd49d, type: 3}
+    - target: {fileID: 5601689132762804740, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
       propertyPath: health
       value: 
       objectReference: {fileID: 5601689132741342345}
@@ -8327,6 +8331,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 5601689132741342338}
+    - target: {fileID: 5601689132762804740, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
+      propertyPath: spike1
+      value: 
+      objectReference: {fileID: 2423275709487755852, guid: 9f38c4e58fa204f418aaddc4db5b52b5, type: 3}
+    - target: {fileID: 5601689132762804740, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
+      propertyPath: spike_2
+      value: 
+      objectReference: {fileID: 4779819151944016700, guid: b7f01dcb3de2347efad661585d2e9421, type: 3}
     - target: {fileID: 5601689132762804740, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
       propertyPath: m_Enabled
       value: 1
