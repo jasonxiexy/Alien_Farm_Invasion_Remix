@@ -12,7 +12,15 @@ public class Boss_Health : MonoBehaviour
 
 	public Health healthUI;
 
-    private void Start()
+
+
+	public bool boss_die = false;
+
+	public GameObject door;
+	public GameObject keyPrefab;
+
+
+	private void Start()
     {
 		healthUI.setMax(health);
     }
@@ -36,26 +44,21 @@ public class Boss_Health : MonoBehaviour
 		}
 	}
 
-	//void OnTriggerEnter2D(Collider2D hitInfo)
-	//{
-	//	Boss_Health enemy = hitInfo.GetComponent<Boss_Health>();
-
-
-	//	if (enemy != null)
-	//	{
-	//		enemy.TakeDamage(damage);
-	//	}
-
-
-
-		//Instantiate(impactEffect, transform.position, transform.rotation);
-
-	//	Destroy(gameObject);
-	//}
 
 	void Die()
 	{
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Destroy(gameObject);
+		boss_die = true;
+		Vector3 door_position = transform.position + transform.up * -1.1f + Vector3.down * 1.5f;
+
+		GameObject childprefab = Instantiate(door, door_position, Quaternion.identity);
+
+		Vector3 keyPosition = transform.position + transform.right * 5f + Vector3.down * 1.5f;
+		GameObject keyFab = Instantiate(keyPrefab, keyPosition, Quaternion.identity);
+
+		//Destroy(gameObject);
+		gameObject.SetActive(false);
 	}
+
+
 }

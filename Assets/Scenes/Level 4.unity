@@ -409,11 +409,11 @@ PrefabInstance:
     - target: {fileID: 4821733525002236543, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: keyText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1207423347}
     - target: {fileID: 4821733525002236543, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: GemsText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1250947198}
     - target: {fileID: 4821733525002236544, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_Material
       value: 
@@ -7395,6 +7395,7 @@ GameObject:
   - component: {fileID: 1217976070}
   - component: {fileID: 1217976069}
   - component: {fileID: 1217976068}
+  - component: {fileID: 1217976073}
   m_Layer: 0
   m_Name: Boss
   m_TagString: boss
@@ -7504,6 +7505,9 @@ MonoBehaviour:
   health: 500
   isInvulnerable: 0
   healthUI: {fileID: 1968335196}
+  boss_die: 0
+  door: {fileID: 5498499994341750022, guid: 2ccc53f6dafe447a48c55e2621448e45, type: 3}
+  keyPrefab: {fileID: 8595692020126381996, guid: 0644dcbc6d9914e9c88799012a7b2cc7, type: 3}
 --- !u!114 &1217976070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7565,6 +7569,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.7370415, y: 3.456315}
   m_EdgeRadius: 0
+--- !u!114 &1217976073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217976065}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2e02c65380a461da6508710c60466d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1250947196
 GameObject:
   m_ObjectHideFlags: 0
