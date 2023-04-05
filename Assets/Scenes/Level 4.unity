@@ -7853,7 +7853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b375a39b3b1b3412bb389cd19c51618d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 350
+  health: 280
   isInvulnerable: 0
   healthUI: {fileID: 1968335196}
   boss_die: 0

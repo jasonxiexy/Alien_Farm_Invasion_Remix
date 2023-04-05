@@ -19,10 +19,14 @@ public class Boss_Health : MonoBehaviour
 	public GameObject door;
 	public GameObject keyPrefab;
 
+	private MonoBehaviour[] comps;
 
-	private void Start()
+
+
+private void Start()
     {
 		healthUI.setMax(health);
+		comps = GetComponents<MonoBehaviour>();
     }
 
     public void TakeDamage(int damage)
@@ -57,7 +61,8 @@ public class Boss_Health : MonoBehaviour
 		keyPosition.y = -5.5f;
 		GameObject keyFab = Instantiate(keyPrefab, keyPosition, Quaternion.identity);
 
-		//Destroy(gameObject);
+		Destroy(gameObject);
+		//foreach (MonoBehaviour c in comps) c.enabled = false;
 		gameObject.SetActive(false);
 	}
 
