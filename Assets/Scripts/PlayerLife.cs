@@ -19,6 +19,7 @@ public class PlayerLife : MonoBehaviour
      private bool wp = false;
     public GameObject magicbook;
     private getKey gg;
+    private Vector3 tempPos;
 
     [SerializeField] AudioSource deathSoundEffect;
     [SerializeField] GameObject replayButton;
@@ -41,7 +42,11 @@ public class PlayerLife : MonoBehaviour
             //Debug.Log("lala");
             rb.bodyType = RigidbodyType2D.Static;
             Die();
-            
+            if(SceneManager.GetActiveScene().buildIndex == 4)
+            {
+                SceneManager.LoadScene(4);
+                return;
+            }
             // if (transform.position.x >= 128)
             // //if (collision.gameObject.name == bomb1.name || collision.gameObject.name == bomb_2.name || collision.gameObject.name == spike1.name || collision.gameObject.name == spike_2.name)
             // {
@@ -74,6 +79,7 @@ public class PlayerLife : MonoBehaviour
     health.damage();
 
     if (health.currentHealth == 0) {
+
         replayButton.SetActive(true);
         homeButton.SetActive(true);
        
@@ -95,7 +101,7 @@ public class PlayerLife : MonoBehaviour
         spike_2.transform.position = new Vector3(168.8475f, -7.341613f, 0.3192011f);
         spike_2.transform.rotation = Quaternion.identity;
         spike2.active = false;
-
+        tempPos = transform.position;
         if (transform.position.x >= 128)
         //if (collision.gameObject.name == bomb1.name || collision.gameObject.name == bomb_2.name || collision.gameObject.name == spike1.name || collision.gameObject.name == spike_2.name)
         {
@@ -105,11 +111,11 @@ public class PlayerLife : MonoBehaviour
             //transform.position = respawnPoint;
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             //StartCoroutine(WaitAndRespawn(collision));
-            SceneManager.LoadScene(5);
+            //SceneManager.LoadScene(5);
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Debug.Log("gg");
             
         }
@@ -136,8 +142,17 @@ public class PlayerLife : MonoBehaviour
     //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     //}
     public void replay()
-    { 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    {
+
+        if(tempPos.x >= 128)
+        {
+            SceneManager.LoadScene(5);
+        }
+        else 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
     }
 
     public void pause()
