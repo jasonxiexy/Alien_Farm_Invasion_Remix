@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-	public Transform player;
+	private Transform player;
 
 	public bool isFlipped = false;
+
+	public Transform pointA;
+	public Transform pointB;
+	public float moveSpeed = 2f;
 
 	public void LookAtPlayer()
 	{
@@ -26,4 +30,27 @@ public class Boss : MonoBehaviour
 			isFlipped = true;
 		}
 	}
+
+    private Vector2 targetPosition;
+
+void Start()
+{
+    // Start by moving towards point A
+    targetPosition = pointA.position;
 }
+
+void Update()
+{
+    // Move towards the current target position
+    transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+    // If we've reached the current target position, switch to the other one
+    if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+    {
+        targetPosition = (targetPosition == (Vector2)pointA.position) ? pointB.position : pointA.position;
+    }
+
+}
+}
+
+

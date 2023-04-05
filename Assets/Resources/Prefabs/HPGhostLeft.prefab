@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 4070216387680968926}
   - component: {fileID: 4070216387680968927}
   m_Layer: 0
-  m_Name: HPGhost
+  m_Name: HPGhostLeft
   m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,8 +333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
-  - {fileID: 566898918318163303, guid: 68f4245e2ba07a241a8e5e7625f368f6, type: 3}
   - {fileID: 2081712187875973452, guid: 4c580110f79c8344694cf67b2f567593, type: 3}
+  - {fileID: 566898918318163303, guid: 68f4245e2ba07a241a8e5e7625f368f6, type: 3}
   player: {fileID: 7837794989380251569, guid: 0b5cb05bbeb3da7469fa1b1a2e35bf52, type: 3}
   speed: 2
 --- !u!61 &4070216387680968993

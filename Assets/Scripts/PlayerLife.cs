@@ -127,8 +127,8 @@ public class PlayerLife : MonoBehaviour
         deathSoundEffect.Play();
         //rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
-        //replayButton.SetActive(true);
-        //homeButton.SetActive(true);
+        replayButton.SetActive(true);
+        homeButton.SetActive(true);
     }
 
     //private void RestartLevel()

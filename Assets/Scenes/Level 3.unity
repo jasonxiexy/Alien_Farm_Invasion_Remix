@@ -32699,11 +32699,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 573758208800587296, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -164.1
+      value: -193.68
       objectReference: {fileID: 0}
     - target: {fileID: 573758208800587296, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.6
+      value: 8.65
       objectReference: {fileID: 0}
     - target: {fileID: 573758208800587482, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
       propertyPath: bomb_2
@@ -32733,6 +32733,14 @@ PrefabInstance:
       propertyPath: resumeButton
       value: 
       objectReference: {fileID: 1760312078}
+    - target: {fileID: 573758208800587485, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
+      propertyPath: keyText
+      value: 
+      objectReference: {fileID: 2024152988}
+    - target: {fileID: 573758208800587485, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
+      propertyPath: GemsText
+      value: 
+      objectReference: {fileID: 1238623389}
     - target: {fileID: 3577645418701300378, guid: ca65e6f603d1aea4ba0c1a828bbcf5f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.86

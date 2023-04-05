@@ -6,7 +6,6 @@ public class player_bombtrap : MonoBehaviour
 { 
     // Start is called before the first frame update
     public float triggerXValue = 136f;
-    public GameObject trapObject;
     private bool door = true;
 
     void Update()

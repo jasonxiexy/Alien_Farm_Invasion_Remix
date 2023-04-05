@@ -5454,6 +5454,8 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 0}
   keyFollowPoint: {fileID: 0}
   followingKey: {fileID: 0}
+  speedBoost: {fileID: 0}
+  jumpBoost: {fileID: 0}
 --- !u!251 &1048482400
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -16221,6 +16223,8 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 0}
   keyFollowPoint: {fileID: 0}
   followingKey: {fileID: 0}
+  speedBoost: {fileID: 0}
+  jumpBoost: {fileID: 0}
 --- !u!4 &1236066084
 Transform:
   m_ObjectHideFlags: 0
@@ -16348,6 +16352,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 1236066088}
+  target: {fileID: 0}
+  distanceThreshold: 30
+  damage: 40
 --- !u!114 &1236066091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18328,11 +18335,11 @@ PrefabInstance:
     - target: {fileID: 4821733525002236543, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: keyText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 257900222}
     - target: {fileID: 4821733525002236543, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: GemsText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 34850934}
     - target: {fileID: 4821733525002236544, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_Material
       value: 

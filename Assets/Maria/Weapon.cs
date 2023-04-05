@@ -7,6 +7,8 @@ public class Weapon : MonoBehaviour
     private PlayerLife player;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public float attackRate = 4f;
+    public float nextAttackTime = 0f;
     // Update is called once per frame
 
     void Start()
@@ -20,10 +22,11 @@ public class Weapon : MonoBehaviour
         if(player.getWp() || (SceneManager.GetActiveScene().buildIndex==4))
         {
             
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && Time.time >= nextAttackTime)
             {
                 
                 Shoot();
+                nextAttackTime = Time.time + 1f/attackRate;
             }
         }
     }

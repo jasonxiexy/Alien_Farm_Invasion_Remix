@@ -10,7 +10,7 @@ public class moving_enemy : MonoBehaviour
 
     // The force to apply to make the object jump
     private float jumpHeight = 0.5f;
-    public GameObject player;
+    private GameObject player;
     private float dealth_force;
     private Rigidbody2D playerBody;
     private Enemy_Health health;
@@ -25,7 +25,7 @@ public class moving_enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Owlet")
+        if (collision.CompareTag("player"))
         {
             //Destroy(collision.gameObject);
             //monster jump by force
@@ -59,6 +59,7 @@ public class moving_enemy : MonoBehaviour
     }
 
     private void Start(){
+        player = GameObject.FindGameObjectWithTag("player");
         health = transform.GetComponent<Enemy_Health>();
         playerBody = player.GetComponent<Rigidbody2D>();
         dealth_force = Mathf.Sqrt(2f * Physics2D.gravity.magnitude * jumpHeight * playerBody.mass);

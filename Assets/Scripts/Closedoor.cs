@@ -8,7 +8,7 @@ public class Closedoor : MonoBehaviour
     private float speed = 20f;
     private float yLimit = -2.04f;
     // Start is called before the first frame update
-
+    public GameObject obj;
 
     // Update is called once per frame
     void Update()
@@ -21,6 +21,7 @@ public class Closedoor : MonoBehaviour
 
             if (transform.position.y <= yLimit)
             {
+                obj.SetActive(true);
                 active = false;
             }
         }

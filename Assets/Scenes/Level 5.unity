@@ -279,6 +279,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 0}
+  target: {fileID: 0}
+  distanceThreshold: 30
+  damage: 40
 --- !u!114 &74293203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +296,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 742706730}
   bulletPrefab: {fileID: 3188573890096127519, guid: c80167e5908ac4022ba661cd689c82b0, type: 3}
+  attackRate: 4
+  nextAttackTime: 0
 --- !u!114 &74293204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,9 +325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff3b9d651320434ab19f86874bc879c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemsText: {fileID: 0}
+  GemsText: {fileID: 1238623389}
   collectSoundEffect: {fileID: 0}
-  keyText: {fileID: 0}
+  keyText: {fileID: 509726712}
 --- !u!95 &74293206
 Animator:
   serializedVersion: 4
@@ -402,6 +407,8 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 0}
   keyFollowPoint: {fileID: 0}
   followingKey: {fileID: 0}
+  speedBoost: {fileID: 0}
+  jumpBoost: {fileID: 0}
 --- !u!4 &74293211
 Transform:
   m_ObjectHideFlags: 0
@@ -969,6 +976,8 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 0}
   keyFollowPoint: {fileID: 0}
   followingKey: {fileID: 0}
+  speedBoost: {fileID: 0}
+  jumpBoost: {fileID: 0}
 --- !u!66 &127333315
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -12635,11 +12644,11 @@ PrefabInstance:
     - target: {fileID: 4821733525002236543, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: keyText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2024152988}
     - target: {fileID: 4821733525002236543, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: GemsText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1238623389}
     - target: {fileID: 4821733525002236544, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_Material
       value: 
@@ -12647,7 +12656,7 @@ PrefabInstance:
     - target: {fileID: 4821733525002236545, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6200000, guid: 4f1dc23aaa21746b58a41cc45da6499b, type: 2}
     - target: {fileID: 4821733525002236546, guid: ec8a4f8cbbbff451d840408e5d5ee2b1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -12749,7 +12758,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerXValue: 140
-  trapObject: {fileID: 0}
 --- !u!114 &742706757
 MonoBehaviour:
   m_ObjectHideFlags: 0

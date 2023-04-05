@@ -50,10 +50,11 @@ public class Boss_Health : MonoBehaviour
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
 		boss_die = true;
 		Vector3 door_position = transform.position + transform.up * -1.1f + Vector3.down * 1.5f;
-
+		door_position.y = -4.5f;
 		GameObject childprefab = Instantiate(door, door_position, Quaternion.identity);
 
 		Vector3 keyPosition = transform.position + transform.right * 5f + Vector3.down * 1.5f;
+		keyPosition.y = -5.5f;
 		GameObject keyFab = Instantiate(keyPrefab, keyPosition, Quaternion.identity);
 
 		//Destroy(gameObject);

@@ -4599,6 +4599,8 @@ MonoBehaviour:
   jumpSoundEffect: {fileID: 0}
   keyFollowPoint: {fileID: 0}
   followingKey: {fileID: 0}
+  speedBoost: {fileID: 0}
+  jumpBoost: {fileID: 0}
 --- !u!251 &1048482400
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -7725,7 +7727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -8297,6 +8299,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601689131791575973, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601689131791575974, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5601689132762804737, guid: 7a4ea83cebe8b4cb8a9233148aaf1aa1, type: 3}
